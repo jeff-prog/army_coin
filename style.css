@@ -73,7 +73,7 @@ h1 {
     width: 100%; /* Largura total da tela */
     background-color: #555; /* Cor de fundo para a barra */
     display: flex; /* Usa flexbox para alinhar os botões */
-    justify-content: space-between; /* Espaço entre os botões */
+    justify-content: center; /* Centraliza todos os botões dentro da barra */
     padding: 10px 0; /* Espaçamento vertical dentro da barra */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Sombra na parte superior da barra */
     z-index: 1000; /* Certifica que a barra esteja acima de outros elementos */
@@ -94,18 +94,15 @@ button {
 }
 
 .nav-button {
-    flex: 1; /* Faz com que todos os botões tenham o mesmo tamanho */
-    margin: 0 5px; /* Espaçamento entre os botões */
+    margin: 0 10px; /* Espaçamento horizontal entre os botões */
     min-width: 80px; /* Largura mínima para os botões */
-    display: flex; /* Usa flexbox para centralizar o texto */
-    justify-content: center; /* Centraliza o texto horizontalmente */
-    align-items: center; /* Centraliza o texto verticalmente */
-    height: 50px; /* Ajusta a altura do botão */
-    color: white; /* Cor do texto do botão */
+    padding: 10px; /* Adiciona padding interno aos botões */
     background-color: orange; /* Cor do fundo do botão */
     border: none; /* Remove bordas dos botões */
     border-radius: 5px; /* Bordas arredondadas para os botões */
     cursor: pointer; /* Muda o cursor para mão ao passar em cima do botão */
+    color: white; /* Cor do texto do botão */
+    text-align: center; /* Centraliza o texto do botão */
 }
 
 .nav-button:hover {
