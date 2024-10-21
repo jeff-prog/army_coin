@@ -19,6 +19,7 @@ body {
     text-align: center;
     width: 100%;
     max-width: 400px; /* Para ajustar melhor no celular */
+    margin-top: -20px; /* Adiciona uma margem negativa para subir o conteúdo */
 }
 
 header {
