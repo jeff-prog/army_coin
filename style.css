@@ -32,8 +32,8 @@ h1 {
 }
 
 .circle {
-    width: 360px; /* Ajustado para ser maior */
-    height: 360px; /* Ajustado para ser maior */
+    width: 288px; /* Ajustado para 288px (reduzido em 20%) */
+    height: 288px; /* Ajustado para 288px (reduzido em 20%) */
     border-radius: 50%; /* Faz o contorno ser um círculo */
     border: 5px solid white; /* Borda branca */
     display: flex;
