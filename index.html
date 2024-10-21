@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Coin Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p>Coins/hour: <span id="coinsPerHour">0</span></p>
+            <p>Level: <span id="level">1</span> | XP: <span id="xp">0</span> | Rank: <span id="rankTitle">Private</span></p>
+        </header>
+
+        <!-- Exibe o número total de moedas no topo -->
+        <h1>Coins: <span id="coinCount">0</span></h1>
+
+
+
+        <div class="energy-bar">
+            <div id="energy-level"></div>
+        </div>
+        
+        <!-- Círculo em volta da imagem -->
+        <div class="circle">
+            <img id="coin" src="private.jpg" alt="Soldado" onclick="clickCoin()">
+        </div>
+
+    
+
+        <!-- Barra inferior com botões -->
+        <div class="bottom-bar">
+            <button class="nav-button" id="homeButton" onclick="window.location.href='index.html'">Home</button>
+            <button class="nav-button" id="upgradeButton" onclick="window.location.href='upgrade.html'">Upgrades</button>
+            <button class="nav-button" id="tasksButton">Tasks</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

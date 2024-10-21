@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c; /* Fundo cinza */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Para ajustar melhor no celular */
+}
+
+header {
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 360px; /* Ajustado para ser maior */
+    height: 360px; /* Ajustado para ser maior */
+    border-radius: 50%; /* Faz o contorno ser um círculo */
+    border: 5px solid white; /* Borda branca */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Centraliza o círculo */
+    overflow: hidden; /* Para esconder a parte da imagem que ultrapassa */
+}
+
+.circle img {
+    width: 100%; /* A imagem ocupará toda a largura do círculo */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 100%; /* Limita a altura da imagem para não ultrapassar o círculo */
+    object-fit: cover; /* Faz a imagem preencher o círculo */
+    cursor: pointer;
+}
+
+.energy-bar {
+    width: 300px;
+    height: 30px;
+    background-color: #555;
+    margin: 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#energy-level {
+    height: 100%;
+    background-color: limegreen;
+    width: 100%;
+}
+
+.bottom-bar {
+    margin-top: 20px;
+}
+
+button {
+    background-color: orange; /* Botões laranjas */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darkorange;
+}
