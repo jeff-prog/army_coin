@@ -29,7 +29,7 @@ const ranks = [
 
 function recoverEnergy() {
     if (energy < 100) {
-        energy += 0.1;
+        energy += 0.5;
         document.getElementById("energy-level").style.width = energy + "%";
     }
 }
@@ -37,7 +37,7 @@ function recoverEnergy() {
 function clickCoin() {
     if (energy > 0) {
         coinCount++;
-        xp += 10; // Ganha 10 XP por moeda
+        xp += 50; // Ganha 10 XP por moeda
         document.getElementById("coinCount").textContent = coinCount;
 
         // Verifica se o jogador subiu de nível
@@ -89,3 +89,14 @@ window.onload = function() {
     // Iniciar a recuperação de energia
     energyInterval = setInterval(recoverEnergy, 100);
 };
+
+function resetLevel() {
+    level = 1; // Reseta o nível para 1
+    xp = 0; // Reseta o XP
+    updateLevelDisplay(); // Atualiza a exibição do nível
+}
+
+function updateLevelDisplay() {
+    // Atualize aqui a parte da interface que mostra o nível do jogador
+    document.getElementById("level-display").innerText = "Nível: " + level;
+}
