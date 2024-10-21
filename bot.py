@@ -7,7 +7,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # URL do seu jogo
-GAME_URL = "https://github.com/jeff-prog/game1"
+GAME_URL = "https://github.com/jeff-prog/army_coin"
 
 # Comando /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

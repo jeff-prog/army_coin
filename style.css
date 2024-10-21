@@ -67,7 +67,16 @@ h1 {
 }
 
 .bottom-bar {
-    margin-top: 20px;
+    position: fixed; /* Fixa a barra na parte inferior */
+    bottom: 0; /* Alinha ao fundo da tela */
+    left: 0; /* Começa do lado esquerdo */
+    width: 100%; /* Largura total da tela */
+    background-color: #555; /* Cor de fundo para a barra */
+    display: flex; /* Usa flexbox para alinhar os botões */
+    justify-content: space-between; /* Espaço entre os botões */
+    padding: 10px 0; /* Espaçamento vertical dentro da barra */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Sombra na parte superior da barra */
+    z-index: 1000; /* Certifica que a barra esteja acima de outros elementos */
 }
 
 button {
@@ -75,13 +84,63 @@ button {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 16px; /* Ajuste do tamanho da fonte */
     color: white;
     border-radius: 5px;
-    margin: 5px;
     transition: background-color 0.3s;
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+    overflow: hidden; /* Esconde qualquer texto que ultrapasse o botão */
+    text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
 }
 
-button:hover {
-    background-color: darkorange;
+.nav-button {
+    flex: 1; /* Faz com que todos os botões tenham o mesmo tamanho */
+    margin: 0 5px; /* Espaçamento entre os botões */
+    min-width: 80px; /* Largura mínima para os botões */
+    display: flex; /* Usa flexbox para centralizar o texto */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    align-items: center; /* Centraliza o texto verticalmente */
+    height: 50px; /* Ajusta a altura do botão */
+    color: white; /* Cor do texto do botão */
+    background-color: orange; /* Cor do fundo do botão */
+    border: none; /* Remove bordas dos botões */
+    border-radius: 5px; /* Bordas arredondadas para os botões */
+    cursor: pointer; /* Muda o cursor para mão ao passar em cima do botão */
+}
+
+.nav-button:hover {
+    background-color: darkorange; /* Cor ao passar o mouse sobre o botão */
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+tr:nth-child(odd) {
+    background-color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #444;
+}
+
+/* Cores especiais para os três primeiros lugares */
+tr:nth-child(1) {
+    background-color: gold;
+}
+
+tr:nth-child(2) {
+    background-color: silver;
+}
+
+tr:nth-child(3) {
+    background-color: #cd7f32; /* Bronze */
 }

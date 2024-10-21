@@ -13,27 +13,23 @@
             <p>Level: <span id="level">1</span> | XP: <span id="xp">0</span> | Rank: <span id="rankTitle">Private</span></p>
         </header>
 
-        <!-- Exibe o número total de moedas no topo -->
-        <h1>Coins: <span id="coinCount">0</span></h1>
-
-
-
         <div class="energy-bar">
             <div id="energy-level"></div>
         </div>
         
         <!-- Círculo em volta da imagem -->
         <div class="circle">
-            <img id="coin" src="private.jpg" alt="Soldado" onclick="clickCoin()">
+            <img id="coin" src="img/private.jpg" alt="Soldado" onclick="clickCoin()">
         </div>
 
-    
+        <p>Coins: <span id="coinCount">0</span></p>
 
         <!-- Barra inferior com botões -->
         <div class="bottom-bar">
             <button class="nav-button" id="homeButton" onclick="window.location.href='index.html'">Home</button>
             <button class="nav-button" id="upgradeButton" onclick="window.location.href='upgrade.html'">Upgrades</button>
             <button class="nav-button" id="tasksButton">Tasks</button>
+            <button class="nav-button" id="rankingButton" onclick="window.location.href='ranking.html'">Ranking</button> <!-- Novo botão Ranking -->
         </div>
     </div>
 

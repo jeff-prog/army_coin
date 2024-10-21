@@ -1,11 +1,11 @@
-let coinCount = 0;
+let coinCount = parseInt(localStorage.getItem('coinCount')) || 0; // Recupera do localStorage ou começa em 0
 let energy = 100;
-let energyInterval;
-let gainPerHour = 0;
-let xp = 0;
-let level = 1;
-let xpToLevelUp = 1000; // XP inicial para subir de nível
-const xpIncreaseFactor = 1.5; // Fator de aumento do XP para cada novo nível
+let gainPerHour = parseInt(localStorage.getItem('gainPerHour')) || 0; // Recupera do localStorage ou começa em 0
+let xp = parseInt(localStorage.getItem('xp')) || 0; // Recupera do localStorage ou começa em 0
+let level = parseInt(localStorage.getItem('level')) || 1; // Recupera do localStorage ou começa em 1
+
+const xpToLevelUpBase = 1000; // XP base para o primeiro nível
+let xpToLevelUp = xpToLevelUpBase + (level - 1) * 200; // XP aumenta a cada nível
 
 // Lista de patentes e suas respectivas imagens
 const ranks = [
@@ -43,31 +43,49 @@ function clickCoin() {
         // Verifica se o jogador subiu de nível
         if (xp >= xpToLevelUp) {
             level++;
-            xpToLevelUp = Math.floor(xpToLevelUp * xpIncreaseFactor); // Aumenta o XP necessário para o próximo nível
-            
-            // Atualiza a patente e a imagem correspondente
-            if (level <= ranks.length) {
-                document.getElementById("level").textContent = level;
-                document.getElementById("rankTitle").textContent = ranks[level - 1].title; // Atualiza o título da patente
-                document.getElementById("coin").src = ranks[level - 1].image; // Troca a imagem
-            }
+            xpToLevelUp += 200; // Aumenta a dificuldade de subir de nível
         }
 
-        document.getElementById("xp").textContent = xp; // Mostra o XP acumulado
+        // Atualiza a patente e a imagem correspondente
+        if (level <= ranks.length) {
+            document.getElementById("level").textContent = level;
+            document.getElementById("rankTitle").textContent = ranks[level - 1].title; // Atualiza o título da patente
+            document.getElementById("coin").src = ranks[level - 1].image; // Troca a imagem
+        }
+
+        document.getElementById("xp").textContent = xp;
+
+        // Salvar os dados no localStorage
+        saveGameData();
+
         energy -= 2;
         document.getElementById("energy-level").style.width = energy + "%";
     }
 }
 
+function saveGameData() {
+    // Salvar as variáveis principais no localStorage
+    localStorage.setItem('coinCount', coinCount);
+    localStorage.setItem('xp', xp);
+    localStorage.setItem('level', level);
+    localStorage.setItem('gainPerHour', gainPerHour);
+}
+
 function upgradeCoinsPerHour() {
     gainPerHour += 10;
     document.getElementById("gainPerHour").textContent = gainPerHour;
+    saveGameData(); // Salva os dados atualizados
 }
 
 window.onload = function() {
-    energyInterval = setInterval(recoverEnergy, 100);
+    // Restaurar as informações do localStorage
     document.getElementById("coinsPerHour").textContent = gainPerHour;
-    document.getElementById("coinCount").textContent = coinCount; // Atualiza o contador de moedas no topo
-    document.getElementById("rankTitle").textContent = ranks[0].title; // Exibe a patente inicial
-    document.getElementById("coin").src = ranks[0].image; // Define a imagem inicial
+    document.getElementById("coinCount").textContent = coinCount;
+    document.getElementById("xp").textContent = xp;
+    document.getElementById("level").textContent = level;
+    document.getElementById("rankTitle").textContent = ranks[level - 1].title;
+    document.getElementById("coin").src = ranks[level - 1].image;
+    
+    // Iniciar a recuperação de energia
+    energyInterval = setInterval(recoverEnergy, 100);
 };
