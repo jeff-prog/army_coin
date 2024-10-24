@@ -43,7 +43,7 @@ function clickCoin() {
         // Verifica se o jogador subiu de nível
         if (xp >= xpToLevelUp) {
             level++;
-            xpToLevelUp += 200; // Aumenta a dificuldade de subir de nível
+            xpToLevelUp += 1000; // Aumenta a dificuldade de subir de nível
         }
 
         // Atualiza a patente e a imagem correspondente
