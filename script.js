@@ -37,13 +37,14 @@ function recoverEnergy() {
 function clickCoin() {
     if (energy > 0) {
         coinCount++;
-        xp += 50; // Ganha 10 XP por moeda
+        xp += 50; // Ganha 50 XP por moeda
         document.getElementById("coinCount").textContent = coinCount;
 
         // Verifica se o jogador subiu de nível
         if (xp >= xpToLevelUp) {
             level++;
-            xpToLevelUp += 1000; // Aumenta a dificuldade de subir de nível
+            xpToLevelUp += 200; // Aumenta a dificuldade de subir de nível
+            updateLevelDisplay(); // Atualiza a exibição do nível
         }
 
         // Atualiza a patente e a imagem correspondente
@@ -88,6 +89,9 @@ window.onload = function() {
     
     // Iniciar a recuperação de energia
     energyInterval = setInterval(recoverEnergy, 100);
+
+    // Mostrar o menu de Armas por padrão ao carregar a página
+    showMenu('weapons');
 };
 
 function resetLevel() {
@@ -102,27 +106,32 @@ function updateLevelDisplay() {
 }
 
 function showMenu(menuId) {
-  // Ocultar todos os menus
-  document.querySelectorAll('.menu-content').forEach(menu => menu.style.display = 'none');
-  
-  // Mostrar o menu selecionado
-  document.getElementById(menuId + '-menu').style.display = 'block';
+    // Ocultar todos os menus
+    document.querySelectorAll('.menu-content').forEach(menu => menu.style.display = 'none');
+    
+    // Mostrar o menu selecionado
+    document.getElementById(menuId + '-menu').style.display = 'block';
+}
+
+function goBack() {
+    // Função de navegação de voltar
+    showMenu('weapons'); // Voltar para o menu de Armas por padrão, ou ajuste conforme necessário
 }
 
 function buyWeapon(weaponId) {
-  // Lógica para compra de armas
-  console.log("Comprou arma:", weaponId);
-  alert("Arma " + weaponId + " comprada com sucesso!");
+    // Lógica para compra de armas
+    console.log("Comprou arma:", weaponId);
+    alert("Arma " + weaponId + " comprada com sucesso!");
 }
 
 function buyEquipment(equipmentId) {
-  // Lógica para compra de equipamentos
-  console.log("Comprou equipamento:", equipmentId);
-  alert("Equipamento " + equipmentId + " comprado com sucesso!");
+    // Lógica para compra de equipamentos
+    console.log("Comprou equipamento:", equipmentId);
+    alert("Equipamento " + equipmentId + " comprado com sucesso!");
 }
 
 function buyPersonality(personalityId) {
-  // Lógica para compra de personalidades
-  console.log("Comprou personalidade:", personalityId);
-  alert("Personalidade " + personalityId + " comprada com sucesso!");
+    // Lógica para compra de personalidades
+    console.log("Comprou personalidade:", personalityId);
+    alert("Personalidade " + personalityId + " comprada com sucesso!");
 }
