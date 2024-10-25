@@ -100,3 +100,29 @@ function updateLevelDisplay() {
     // Atualize aqui a parte da interface que mostra o nível do jogador
     document.getElementById("level-display").innerText = "Nível: " + level;
 }
+
+function showMenu(menuId) {
+  // Ocultar todos os menus
+  document.querySelectorAll('.menu-content').forEach(menu => menu.style.display = 'none');
+  
+  // Mostrar o menu selecionado
+  document.getElementById(menuId + '-menu').style.display = 'block';
+}
+
+function buyWeapon(weaponId) {
+  // Lógica para compra de armas
+  console.log("Comprou arma:", weaponId);
+  alert("Arma " + weaponId + " comprada com sucesso!");
+}
+
+function buyEquipment(equipmentId) {
+  // Lógica para compra de equipamentos
+  console.log("Comprou equipamento:", equipmentId);
+  alert("Equipamento " + equipmentId + " comprado com sucesso!");
+}
+
+function buyPersonality(personalityId) {
+  // Lógica para compra de personalidades
+  console.log("Comprou personalidade:", personalityId);
+  alert("Personalidade " + personalityId + " comprada com sucesso!");
+}

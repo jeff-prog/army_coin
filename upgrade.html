@@ -1,30 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upgrades</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Menu de Upgrade</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Upgrades</h1>
-        <div class="upgrade-item">
-            <p>Increase Coins per Hour</p>
-            <button class="upgrade-button" onclick="upgradeCoinsPerHour()">Upgrade</button>
-        </div>
-        <p>Current Gain: <span id="gainPerHour">0</span> coins/hour</p>
-
-        <!-- Barra inferior com botões -->
-<div class="bottom-bar">
-        <button class="nav-button" id="homeButton" onclick="window.location.href='index.html'">Home</button>
-        <button class="nav-button" id="upgradeButton" onclick="window.location.href='upgrade.html'">Upgrades</button>
-        <button class="nav-button" id="tasksButton">Tasks</button>
-        <button class="nav-button" id="rankingButton" onclick="window.location.href='ranking.html'">Ranking</button> <!-- Adicionando o botão Ranking -->
-</div>
-
+  <div id="upgrade-menu">
+    <div class="submenu-buttons">
+      <button id="btn-weapons" onclick="showMenu('weapons')">Armas</button>
+      <button id="btn-equipment" onclick="showMenu('equipment')">Equipamentos</button>
+      <button id="btn-personality" onclick="showMenu('personality')">Personalidade</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="weapons-menu" class="menu-content">
+      <!-- 14 Weapons -->
+      <div class="item">
+        <img src="path/to/weapon1.png" alt="Weapon 1">
+        <p>Descrição da Arma 1</p>
+        <button class="buy-button green" onclick="buyWeapon(1)">Comprar</button>
+      </div>
+      <!-- Adicione as outras armas seguindo o mesmo modelo -->
+    </div>
+
+    <div id="equipment-menu" class="menu-content" style="display: none;">
+      <!-- 9 Equipments -->
+      <div class="item">
+        <img src="path/to/equipment1.png" alt="Equipment 1">
+        <p>Descrição do Equipamento 1</p>
+        <button class="buy-button green" onclick="buyEquipment(1)">Comprar</button>
+      </div>
+      <!-- Adicione os outros equipamentos seguindo o mesmo modelo -->
+    </div>
+
+    <div id="personality-menu" class="menu-content" style="display: none;">
+      <!-- Personalities -->
+      <div class="personality-item">
+        <button class="personality-button purple-gold">Discipline</button>
+        <p>Descrição de Discipline</p>
+        <button class="buy-button green" onclick="buyPersonality(1)">Comprar</button>
+      </div>
+      <div class="personality-item">
+        <button class="personality-button purple-gold">Courage</button>
+        <p>Descrição de Courage</p>
+        <button class="buy-button green" onclick="buyPersonality(2)">Comprar</button>
+      </div>
+      <!-- Adicione os outros botões de personalidade seguindo o mesmo modelo -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

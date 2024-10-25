@@ -156,3 +156,62 @@ tr:nth-child(3) {
 #reset-level:hover {
     background-color: darkorange;
 }
+
+body {
+  background-color: #333;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#upgrade-menu {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.submenu-buttons button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submenu-buttons button:hover {
+  background-color: #555;
+}
+
+.menu-content {
+  display: none;
+}
+
+.item, .personality-item {
+  margin: 10px 0;
+}
+
+.item img {
+  width: 150px;
+  height: 150px;
+}
+
+.buy-button.green {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.buy-button.green:hover {
+  background-color: #45A049;
+}
+
+.personality-button.purple-gold {
+  background-color: #6A0DAD; /* Roxo */
+  color: white;
+  border: 2px solid gold;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
